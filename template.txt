@@ -1,0 +1,847 @@
+##Inc(Target/VKCount,1)##
+##SetEnv(DT_bg,GET,DT_bg,urlencode)##
+##SetEnv(DT_urlColor,GET,DT_urlColor,urlencode)##
+##SetEnv(DT_siteBgColor,GET,DT_siteBgColor,urlencode)##
+##SetEnv(DT_hoverColor,GET,DT_hoverColor,urlencode)##
+##SetEnv(DT_bgColor,GET,DT_bg,urlencode)##
+##SetEnv(DT_bgHoverColor,GET,DT_bgHover,urlencode)##
+##SetEnv(DT_borderColor,GET,DT_borderColor,urlencode)##
+##SetEnv(DT_textColor,GET,DT_textColor,urlencode)##
+##SetEnv(DT_titleColor,GET,DT_titleColor,urlencode)##
+##SetEnv(DT_titleHoverColor,GET,DT_titleHoverColor,urlencode)##
+##SetEnv(DT_isDarkTheme,GET,DT_isDarkTheme,urlencode)##
+##SetEnv(RB/isDarkTheme,GET,isDarkTheme,integer)##
+##SetEnv(RB/request_st,GET,start_time,urlencode)##
+##SetEnv(exp_id,GET,exp_id,integer)##
+##SetVars(TargetMarketingCSSID=#b%ID-%Random)##
+<!-- IF Eq(RB/isDarkTheme,1) --->##SetVars(DT_isDarkTheme=true)##<!-- /IF --->
+##SetVars(color=#)##
+
+<!-- IF Eq(DT_urlColor,transparent) --->##SetVars(DT_urlColor_color=##DT_urlColor##)##<!-- ELSE --->##SetVars(DT_urlColor_color=##color####DT_urlColor##)##<!-- /IF --->
+<!-- IF Eq(DT_hoverColor,transparent) --->##SetVars(DT_hoverColor_color=##DT_hoverColor##)##<!-- ELSE --->##SetVars(DT_hoverColor_color=##color####DT_hoverColor##)##<!-- /IF --->
+<!-- IF Eq(DT_siteBgColor,transparent) --->##SetVars(DT_siteBgColor_color=##DT_siteBgColor##)##<!-- ELSE --->##SetVars(DT_siteBgColor_color=##color####DT_siteBgColor##)##<!-- /IF --->
+<!-- IF Eq(DT_bgColor,transparent) --->##SetVars(DT_bgColor_color=##DT_bgColor##)##<!-- ELSE --->##SetVars(DT_bgColor_color=##color####DT_bgColor##)##<!-- /IF --->
+<!-- IF Eq(DT_bgHoverColor,transparent) --->##SetVars(DT_bgHoverColor_color=##DT_bgHoverColor##)##<!-- ELSE --->##SetVars(DT_bgHoverColor_color=##color####DT_bgHoverColor##)##<!-- /IF --->
+<!-- IF Eq(DT_borderColor,transparent) --->##SetVars(DT_borderColor_color=##DT_borderColor##)##<!-- ELSE --->##SetVars(DT_borderColor_color=##color####DT_borderColor##)##<!-- /IF --->
+<!-- IF Eq(DT_textColor,transparent) --->##SetVars(DT_textColor_color=##DT_textColor##)##<!-- ELSE --->##SetVars(DT_textColor_color=##color####DT_textColor##)##<!-- /IF --->
+<!-- IF Eq(DT_titleColor,transparent) --->##SetVars(DT_titleColor_color=##DT_titleColor##)##<!-- ELSE --->##SetVars(DT_titleColor_color=##color####DT_titleColor##)##<!-- /IF --->
+<!-- IF Eq(DT_titleHoverColor,transparent) --->##SetVars(DT_titleHoverColor_color=##DT_titleHoverColor##)##<!-- ELSE --->##SetVars(DT_titleHoverColor_color=##color####DT_titleHoverColor##)##<!-- /IF --->
+<!-- IF SSP/Banner1_dchain_nodes_1_ext_url -->##SetVars(closeAdvBannerOwnerLink=##SSP/Banner1_dchain_nodes_1_ext_url##)## <!-- ELSE --->##SetVars(closeAdvBannerOwnerLink=https://ads.vk.com/adv_info?data=##Reklama/Base64Encode({"fields":[{"name":"Рекламодатель","value":"##SSP/Banner1_dchain_nodes_1_name##"},{"name":"ИНН","value":"##SSP/Banner1_dchain_nodes_1_ext_legal##"},{"name":"Объект рекламы","value":"##SSP/Banner1_trackingLink##"}]})##)##<!-- /IF -->
+
+<!-- IF SSP/Banner1_image_orig_url -->
+  ##SetVars(VK_image_src=##SSP/Banner1_image_orig_url##)##
+<!-- ELSE -->
+  ##SetVars(VK_image_src=##SSP/Banner1_image_main_url##)##
+<!-- /IF -->
+
+
+<div >
+ <!-- DSP VK --><!-- %ID -->
+ <!-- ##SSP/Banner1_likes## -->
+ <!-- ##SSP/Banner1_vk_group_member_count## -->
+ ##SetVars(VK_show=1)##
+ ##Reklama/ShowBanner(2145)##
+<style>
+    #trg-b-##TrgUnID## {
+        position: relative!important;
+        width: 240px !important;
+        height: 800px !important;
+        background-color: white;
+        border-radius: 16px;
+        font-family: Arial, Verdana, sans-serif !important;
+        box-sizing: border-box!important;
+        overflow: hidden!important;
+        text-align: left;
+        z-index: 0;
+        border: 1px solid #E6E7EB;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content {
+        position: relative;
+        height: 206px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__link {
+        text-decoration: none !important;
+        color: white;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100%!important;
+        box-sizing: border-box!important;
+        display: flex;
+        flex-direction: column;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__img-wrap {
+        position: relative;
+        height: 140px;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__img {
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__content-wrap {
+        display: flex;
+        flex-direction: column;
+        transition: all ease-in-out 0.3s;
+        position: relative;
+        height: 100%;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content-wrap::before {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 52.31%, rgba(255, 255, 255, 0) 92.14%);
+        transform: matrix(1, 0, 0, -1, 0, 0);
+        height: 100px;
+        width: 240px;
+        content: '';
+        transition: all ease-in-out 0.3s;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__shadow__bottom {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        width: 240px;
+        height: 65px;
+        transition: all ease-in-out 0.3s;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 25.44%, rgba(255, 255, 255, 0) 92.14%);
+        transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__shadow__top {
+        position: absolute;
+        width: 240px;
+        opacity: 0;
+        height: 40px;
+        left: 0px;
+        top: 50px;
+        content: '';
+        z-index: 5;
+        transition: all ease-in-out 0.3s;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 44.15%, rgba(255, 255, 255, 0) 92.14%);
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__scroll {
+        padding: 6px 12px 0 16px;
+        position: relative;
+        transition: all ease-in-out 0.3s;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background: #ffffff;
+        flex-shrink: 0;
+        height: calc(100% - 56px);
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__text {
+        height: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        color:  #87898F;
+        transition: all ease-in-out 0.3s;
+        user-select: none;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__title {
+        padding: 0 12px 0 16px;
+        color: #2C2D2E;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 700;
+        z-index: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        margin-top: 10px;
+        flex-shrink: 0;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button-wrap {
+        background-color: #ffffff;
+        padding: 0px 12px 16px 12px;
+        margin-top: auto;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 14px 8px 16px;
+        background-color: #ffffff;
+        color: <!-- IF Eq(_SITEID,163) --->#FF8800;<!-- ELSE -->#2688EB;<!-- /IF -->
+        border: 1px solid <!-- IF Eq(_SITEID,163) --->#FF8800;<!-- ELSE -->#2688EB;<!-- /IF -->
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button:hover {
+       color: <!-- IF Eq(_SITEID,163) --->#FF8800;<!-- ELSE -->#2C7CDE;<!-- /IF -->
+       border-color: <!-- IF Eq(_SITEID,163) --->#FF8800;<!-- ELSE -->#2C7CDE;<!-- /IF -->
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button-text {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content:not(.dtd-b-banner_static):hover .dtd-b-banner__content-wrap {
+        transform: translateY(-80px);
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content:not(.dtd-b-banner_static):hover .dtd-b-banner__scroll {
+        height: 100%;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content:not(.dtd-b-banner_static):hover .dtd-b-banner__content-wrap::before {
+        top: -40px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__shadow__icon {
+        width: 12px;
+        height: 7px;
+        margin: 10px auto;
+        cursor: pointer;
+        visibility: hidden;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content:not(.dtd-b-banner_static):hover .dtd-b-banner__shadow__icon {
+        visibility: visible;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__text-scroll::-webkit-scrollbar-track {
+       width: 6px;
+       height: 60px;
+       border-radius: 8px
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__content:not(.dtd-b-banner_static):hover .dtd-b-banner__scroll::-webkit-scrollbar-thumb {
+       display: block;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__scroll::-webkit-scrollbar-thumb {
+       display: none;
+       width: 6px;
+       height: 60px;
+       background: rgba(0, 16, 61, 0.06);
+       border-radius: 8px;
+    }
+    #trg-b-##TrgUnID## .dtd-b-banner__scroll::-webkit-scrollbar {
+       width: 6px;
+       height: 60px;
+   }
+
+    #trg-b-##TrgUnID## .icon-top {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2071 6.70711C11.5976 6.31658 11.5976 5.68342 11.2071 5.29289L6.70711 0.792894C6.31658 0.402369 5.68342 0.402369 5.29289 0.792894L0.792893 5.29289C0.402368 5.68342 0.402369 6.31658 0.792893 6.70711C1.18342 7.09763 1.81658 7.09763 2.20711 6.70711L6 2.91421L9.79289 6.70711C10.1834 7.09763 10.8166 7.09763 11.2071 6.70711Z' fill='%23272B37' fill-opacity='0.3'/%3E%3C/svg%3E%0A");
+    }
+
+    #trg-b-##TrgUnID## .icon-bottom {
+        transform: rotate(-180deg);
+        background-image: url("data:image/svg+xml, %3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2071 0.292893C11.5976 0.683418 11.5976 1.31658 11.2071 1.70711L6.70711 6.20711C6.31658 6.59763 5.68342 6.59763 5.29289 6.20711L0.792893 1.70711C0.402368 1.31658 0.402369 0.683417 0.792893 0.292893C1.18342 -0.0976315 1.81658 -0.0976315 2.20711 0.292893L6 4.08579L9.79289 0.292893C10.1834 -0.0976312 10.8166 -0.0976311 11.2071 0.292893Z' fill='%23272B37' fill-opacity='0.3'/%3E%3C/svg%3E");
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__label-wrap {
+        position: absolute;
+
+        /*
+        top: 10px;
+        left: 12px;
+        */
+
+        top: 8px;
+        left: 6px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__label {
+        /*
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 72px;
+        height: 22px;
+
+        font-size: 10px;
+        line-height: 16px;
+        font-weight: 400;
+        font-style: normal;
+
+        border-radius: 6px;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.24);
+        backdrop-filter: blur(6px);
+        */
+        display: inline;
+        padding: 1.5px 7px;
+        color: #ffffff;
+        font-family: Arial, serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13px;
+        background: rgba(0, 0, 0, 0.32);
+        backdrop-filter: blur(10px);
+        border-radius: 40px;
+        z-index: 1;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__disclaimer-wrap {
+        position: absolute;
+        padding: 4px 12px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 10px;
+        line-height: 16px;
+        font-weight: 400;
+        font-style: normal;
+
+
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.24);
+        backdrop-filter: blur(6px);
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__disclaimer {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%!important;
+        word-break: break-all;
+        text-overflow: ellipsis!important;
+        white-space: nowrap!important;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button_space {
+        justify-content: space-between !important;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__button__icon {
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.24745 1.24745C0.142822 2.35207 0.142822 4.12994 0.142822 7.68568V8.31425C0.142822 11.87 0.142822 13.6479 1.24745 14.7525C2.35207 15.8571 4.12994 15.8571 7.68568 15.8571H8.31425C11.87 15.8571 13.6479 15.8571 14.7525 14.7525C15.8571 13.6479 15.8571 11.87 15.8571 8.31425V7.68568C15.8571 4.12994 15.8571 2.35207 14.7525 1.24745C13.6479 0.142822 11.87 0.142822 8.31425 0.142822H7.68568C4.12994 0.142822 2.35207 0.142822 1.24745 1.24745ZM2.78569 4.92855C2.87095 9.03323 4.91715 11.5 8.50459 11.5H8.70794V9.15162C10.0262 9.28318 11.023 10.2502 11.423 11.5H13.2857C12.7741 9.63182 11.4296 8.59906 10.5901 8.20438C11.4296 7.71761 12.6101 6.53358 12.8921 4.92855H11.2C10.8327 6.23099 9.74417 7.41502 8.70794 7.52685V4.92855H7.01582V9.48052C5.96648 9.2174 4.64171 7.94127 4.58268 4.92855H2.78569Z' fill='%232688EB'/%3E%3C/svg%3E%0A");
+    }
+
+    #trg-b-##TrgUnID## .text-link {
+       text-decoration: underline;
+       color: <!-- IF Eq(_SITEID,163) --->#FF8800;<!-- ELSE -->#2688EB;<!-- /IF -->
+    }
+
+            #trg-b-##TrgUnID## .dtd-b-banner__disclaimer::before,
+        #trg-b-##TrgUnID## .dtd-b-banner__disclaimer::after {
+          visibility: hidden;
+        }
+
+
+    #trg-b-##TrgUnID## .dtd-b-banner__like-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 8px;
+      gap: 4px;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      bottom: 10px;
+      left: 12px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__like-icon {
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.76116 3.09816C7.84727 3.17668 7.92699 3.2551 8.00036 3.33177C8.07383 3.25506 8.15366 3.17658 8.23988 3.09801C8.82194 2.56756 9.73412 2 10.9605 2C13.2078 2 15 3.85976 15 6.11693C15 7.23925 14.7792 8.09332 14.094 9.02966C13.4159 9.95635 12.2854 10.9597 10.4867 12.3916L8.83256 13.7084C8.34423 14.0972 7.65577 14.0972 7.16744 13.7084L5.51334 12.3916C3.71463 10.9597 2.58412 9.95635 1.906 9.02966C1.22081 8.09332 1 7.23925 1 6.11693C1 3.85976 2.79218 2 5.03947 2C6.26689 2 7.17912 2.56741 7.76116 3.09816Z' fill='%23FF3347'/%3E%3C/svg%3E%0A");
+      width: 16px;
+      height: 16px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__like-text {
+      color: #ffffff;
+      font-size: 10px;
+      line-height: 13px;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__group {
+      display: flex;
+      align-items: center;
+      padding: 0 12px 0 16px;
+      margin-top: 10px;
+      z-index: 10;
+    }
+
+
+    #trg-b-##TrgUnID## .dtd-b-banner__group-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__group-title {
+        color: #2C2D2E;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        flex-shrink: 0;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__group-sub {
+      font-size: 13px;
+      line-height: 18px;
+      color: #87898F;
+    }
+
+    #trg-b-##TrgUnID## .dtd-b-banner__group-icon {
+      margin-right: 8px;
+      height: 36px;
+      width: 36px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+</style>
+
+<!-- IF Eq(DT_isDarkTheme,true) --->
+    <style>
+        #trg-b-##TrgUnID## {
+            border: none !important;
+            background: #2A2A2B !important;
+        }
+
+
+        #trg-b-##TrgUnID## .dtd-b-banner__content-wrap::before {
+            background: linear-gradient(180deg, #2A2A2B 0%, rgba(42, 42, 43, 0.9) 52.31%, rgba(42, 42, 43, 0) 92.14%) !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__button {
+            background: #2A2A2B !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__shadow__top {
+            background: linear-gradient(180deg, #2A2A2B 0%, rgba(42, 42, 43, 0.9) 44.15%, rgba(42, 42, 43, 0) 92.14%) !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__shadow__bottom {
+           background: linear-gradient(180deg, #2A2A2B 0%, rgba(42, 42, 43, 0.9) 32.63%, rgba(42, 42, 43, 0) 92.14%) !important;
+        }
+
+                #trg-b-##TrgUnID## .icon-top {
+         background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2071 6.70711C11.5976 6.31658 11.5976 5.68342 11.2071 5.29289L6.70711 0.792894C6.31658 0.402369 5.68342 0.402369 5.29289 0.792894L0.792893 5.29289C0.402368 5.68342 0.402369 6.31658 0.792893 6.70711C1.18342 7.09763 1.81658 7.09763 2.20711 6.70711L6 2.91421L9.79289 6.70711C10.1834 7.09763 10.8166 7.09763 11.2071 6.70711Z' fill='%23F5F6FF' fill-opacity='0.6'/%3E%3C/svg%3E%0A") !important;
+       }
+
+        #trg-b-##TrgUnID## .icon-bottom {
+           background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2071 0.292893C11.5976 0.683418 11.5976 1.31658 11.2071 1.70711L6.70711 6.20711C6.31658 6.59763 5.68342 6.59763 5.29289 6.20711L0.792893 1.70711C0.402368 1.31658 0.402369 0.683417 0.792893 0.292893C1.18342 -0.0976315 1.81658 -0.0976315 2.20711 0.292893L6 4.08579L9.79289 0.292893C10.1834 -0.0976312 10.8166 -0.0976311 11.2071 0.292893Z' fill='%23F5F6FF' fill-opacity='0.6'/%3E%3C/svg%3E%0A") !important;
+        }
+
+
+        #trg-b-##TrgUnID## .dtd-b-banner__title,
+         #trg-b-##TrgUnID## .dtd-b-banner__group-title  {
+           color: #FFFFFF !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__text,
+        #trg-b-##TrgUnID## .dtd-b-banner__group-sub {
+           color: #E7E8EA !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__button-wrap {
+            background: #2A2A2B !important;
+        }
+
+        #trg-b-##TrgUnID## .dtd-b-banner__scroll {
+          background: #2A2A2B !important;
+        }
+    </style>
+<!-- /IF -->
+
+<div class="dtd-b-wrap dtd-b-multi" id="trg-b-##TrgUnID##" <!-- IF Eq(_SITEID,163) ---><!-- ELSE --><!-- IF Eq(hide-banner-mode,1) ---> data-hide-##IDRAndom##="hide-banner" style="display:block;" <!-- ELSE ---> style="display:none;" <!-- /IF ---><!-- /IF --> >
+  <div class="dtd-b-banner <!-- IF SSP/Banner1_desc2 --> _has-disclaimer<!-- /IF --> mailru-visibility-check" id="b%ID-%Random" data-closewrap-container="b%ID-%Random">
+      ##SetVars(closeAdvBannerComponentType=vertical)##
+      ##Reklama/ShowBanner(1156288)##
+      <a rel="noopener" class="dtd-b-banner__link" href="##SSP/Banner1_trackingLink##" target="_blank">
+          <div class="dtd-b-banner__img-wrap">
+              <div class="dtd-b-banner__label-wrap">
+                  <div class="dtd-b-banner__label">Реклама<!-- IF SSP/Banner1_agerestrictions --> ##SSP/Banner1_agerestrictions##<!-- /IF ---></div>
+              </div>
+              <div class="dtd-b-banner__img"></div>
+               <!-- IF SSP/Banner1_desc2 -->
+                  <div class="dtd-b-banner__disclaimer-wrap">
+                      <div class="dtd-b-banner__disclaimer js-trg-item-disclamer">
+                          <div class="js-trg-item-disclamer-text" title="##SSP/Banner1_desc2##">##SSP/Banner1_desc2##</div>
+                      </div>
+                  </div>
+                  <!-- ELSE -->
+                    <!-- IF Gt(SSP/Banner1_linktype,0) && (Eq(exp_id,505) || Eq(exp_id,506)) -->
+                      <div class="dtd-b-banner__like-wrap">
+                        <div class="dtd-b-banner__like-icon"></div>
+                        <div class="dtd-b-banner__like-text"></div>
+                      </div>
+                    <!-- /IF -->
+              <!-- /IF -->
+          </div>
+          <div class="dtd-b-banner__content">
+              <div class="dtd-b-banner__content-wrap">
+                  <div class="dtd-b-banner__shadow__top">
+                      <div class="dtd-b-banner__shadow__icon icon-top"></div>
+                  </div>
+                  <!-- IF Gt(SSP/Banner1_linktype,0) && (Eq(exp_id,505) || Eq(exp_id,506)) -->
+                    <div class="dtd-b-banner__group dtd-b-banner__header">
+                      <div class="dtd-b-banner__group-icon" style='background-image: url("##SSP/Banner1_image_icon_url##")'></div>
+                      <div class=dtd-b-banner__group-wrap>
+                        <div class="dtd-b-banner__group-title"><!-- IF SSP/Banner1_title -->##SSP/Banner1_title##<!-- /IF --></div>
+                        <div class="dtd-b-banner__group-sub"></div>
+                      </div>
+                    </div>
+                  <!-- ELSE -->
+                    <div class="dtd-b-banner__title dtd-b-banner__header">
+                      <!-- IF SSP/Banner1_title -->##SSP/Banner1_title##<!-- /IF -->
+                    </div>
+                  <!-- /IF -->
+                  <div class="dtd-b-banner__scroll">
+                      <div class="dtd-b-banner__text" lang="ru">##SSP/Banner1_desc##</div>
+                  </div>
+              </div>
+              <div class="dtd-b-banner__shadow__bottom">
+                  <div class="dtd-b-banner__shadow__icon icon-bottom"></div>
+              </div>
+          </div>
+          <div class="dtd-b-banner__button-wrap">
+              <div class="dtd-b-banner__button <!-- IF Gt(SSP/Banner1_linktype,0) --> dtd-b-banner__button_space <!-- /IF -->">
+                  <div class="dtd-b-banner__button-text"><!-- IF SSP/Banner1_ctatext -->##SSP/Banner1_ctatext##<!-- ELSE --->Перейти<!-- /IF --></div>
+                  <!-- IF Gt(SSP/Banner1_linktype,0) -->
+                    <div class="dtd-b-banner__button__icon"></div>
+                  <!-- /IF -->
+              </div>
+          </div>
+      </a>
+  </div>
+</div>
+
+##SetVars(Target/BannerWrapCSSID=#trg-b-##TrgUnID##)##
+##SetVars(Target/BannerWrapID=trg-b-##TrgUnID##)##
+##SetVars(Target/ForceScrollLogic=1)##
+##Reklama/ShowBanner(693)##
+##SetVars(Target/ForceScrollLogic=)##
+##SetVars(Target/ForceScrollLogicHover=)##
+##SetVars(Target/BannerWrapCSSID=)##
+##SetVars(Target/BannerWrapID=)##
+##SetVars(Target/BannerNoScrollFade=)##
+<script>
+ (function(rootElem) {
+  var discText = rootElem.querySelector('.js-trg-item-disclamer-text');
+  if (discText) {
+   discText.innerHTML = discText.innerHTML.replace(/<br\/?>/g, ' ');
+  }
+ })(document.getElementById("trg-b-##TrgUnID##"));
+</script>
+
+<script>
+    (function(root, imgSrc) {
+        var container = root.querySelector('.dtd-b-banner__content');
+        var img = root.querySelector('.dtd-b-banner__img');
+        var imgContainer = root.querySelector('.dtd-b-banner__img-wrap');
+        var content = root.querySelector('.dtd-b-banner__content');
+        var button = root.querySelector('.dtd-b-banner__button-wrap');
+        var scrollContainer = root.querySelector('.dtd-b-banner__scroll');
+        var shadowTop = root.querySelector('.dtd-b-banner__shadow__top');
+        var shadowBottom = root.querySelector('.dtd-b-banner__shadow__bottom');
+        var title = root.querySelector('.dtd-b-banner__title');
+        var link = root.querySelector('.dtd-b-banner__link');
+        var text = root.querySelector('.dtd-b-banner__text');
+        var likeButton = root.querySelector('.dtd-b-banner__like-wrap');
+        var likesCounter = root.querySelector('.dtd-b-banner__like-text');
+        var groupCounter = root.querySelector('.dtd-b-banner__group-sub');
+        var header = root.querySelector('.dtd-b-banner__header');
+
+        var isAlwaysShowLikeButton = <!-- IF Eq(exp_id,505) --->true<!-- ELSE --->false<!-- /IF --->;
+        var likesCount = +"##SSP/Banner1_likes##";
+        var membersCount = +"##SSP/Banner1_vk_group_member_count##";
+
+        var scrollDown = root.querySelector('.icon-bottom');
+        var scrollUp = root.querySelector('.icon-top');
+
+        if (!title) {
+          title = root.querySelector('.dtd-b-banner__group-title');
+        }
+
+        <!-- IF Eq(_SITEID,105) --->
+
+        var replaceText = text.innerText;
+        replaceText.split(' ').filter(function (string) {
+            return string.match(/([a-z]+)/i);
+        }).forEach(function (item) {
+            if (!!item.match('http')) {
+                replaceText = replaceText.replace(item, '<a href="##SSP/Banner1_trackingLink##" class="text-link" target="_blank" lang="en">' + 'cсылка' + '</a>');
+            }
+            else {
+                replaceText = replaceText.replace(item, '<span lang="en">' + item + '</span>');
+            }
+        });
+
+        text.innerHTML = replaceText;
+        <!-- /IF -->
+
+
+        function setBackground(callback) {
+            var image = new Image();
+            image.onload = function () {
+                var ratio = Math.min(image.height / image.width, 1);
+                var height = imgContainer.offsetWidth * ratio;
+
+                img.style.backgroundImage = 'url("' + imgSrc + '")';
+                imgContainer.style.height = height + 'px';
+
+                callback(height);
+            };
+            image.src = imgSrc;
+        }
+        setBackground(function (height) {
+            root.style.visibility = 'visible';
+
+            var pluralize = function(forms, n) {
+              var idx;
+              if (n % 10 === 1 && n % 100 !== 11) {
+                  idx = 0;
+              } else if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) {
+                  idx = 1;
+              } else {
+                  idx = 2;
+              }
+              return forms[idx] || '';
+            };
+
+            var isSubsShown = false;
+            var isLikesShown = false;
+            var isLikeButtonVisible = !!likeButton;
+
+            if (groupCounter && membersCount >= 100) {
+              isSubsShown = true;
+              groupCounter.textContent = membersCount + ' ' + pluralize(['подписчик', 'подписчика', 'подписчиков'], membersCount);
+            }
+
+            if (likesCounter) {
+              if (likesCount >= 5) {
+                isLikesShown = true;
+                likesCounter.textContent = likesCount;
+              } else {
+                likesCounter.style.display = "none";
+                if (!isAlwaysShowLikeButton) {
+                  likeButton.style.display = "none";
+                  isLikeButtonVisible = false;
+                }
+              }
+            }
+
+            <!-- IF Gt(SSP/Banner1_linktype,0) -->
+              var onVisible = function(element, callback) {
+                if (!window.IntersectionObserver) {
+                  return;
+                }
+                new IntersectionObserver((entries, observer) => {
+                  entries.forEach(entry => {
+                    if(entry.intersectionRatio > 0) {
+                      observer.disconnect();
+                      callback(element);
+                    }
+                  });
+                }).observe(element);
+              };
+
+              var visibilityCallback = function() {
+                if (!window.xray) {
+                  return;
+                }
+
+                xray.send('adman', {i: 'vk_ad_post_vis'});
+                if (isLikesShown) {
+                  xray.send('adman', {i: 'vk_ad_post_likes_vis'});
+                }
+                if (isLikeButtonVisible) {
+                  xray.send('adman', {i: 'vk_ad_post_like_btn_vis'});
+                }
+                if (isSubsShown) {
+                  xray.send('adman', {i: 'vk_ad_post_subs_vis'});
+                }
+                if (isLikesShown || isSubsShown) {
+                  xray.send('adman', {i: 'vk_ad_post_likes_or_subs_vis'});
+                }
+              };
+              onVisible(root, visibilityCallback);
+            <!-- /IF -->
+
+            content.style.height = root.offsetHeight - height - button.offsetHeight + 'px';
+            shadowTop.style.top =  header.offsetTop + header.offsetHeight + 'px';
+
+            if (scrollContainer.scrollHeight === scrollContainer.offsetHeight) {
+              container.classList.add('dtd-b-banner_static');
+            }
+
+            scrollContainer.addEventListener('scroll', function () {
+                if (scrollContainer.scrollTop > 0) {
+                    shadowTop.style.opacity = '1';
+                } else {
+                    shadowTop.style.opacity = '0';
+                }
+
+                if (scrollContainer.scrollTop + scrollContainer.offsetHeight >= scrollContainer.scrollHeight) {
+                    shadowBottom.style.opacity = '0';
+                } else {
+                    shadowBottom.style.opacity = '1';
+                }
+            });
+
+
+        });
+
+        scrollDown.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            scrollContainer.scrollTop += 40;
+        });
+
+        scrollUp.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            scrollContainer.scrollTop -= 40;
+        });
+
+        link.addEventListener('click', function () {
+            new Image().src = '##Reklama/SSPClick(##Reklama/ShowBanner(5577)##)##'
+
+            <!-- IF Gt(SSP/Banner1_linktype,0) -->
+              if (window.xray) {
+                  xray.send('adman', {i: 'vk_ad_post_click'});
+              }
+            <!-- /IF -->
+        });
+
+        container.addEventListener('mouseout', function () {
+           shadowBottom.style.opacity = '1';
+        });
+
+        <!-- IF Gt(SSP/Banner1_linktype,0) && !SSP/Banner1_desc2 && (Eq(exp_id,505) || Eq(exp_id,506)) --->
+          var like = root.querySelector('.dtd-b-banner__like-wrap');
+
+          like.addEventListener('click', function (event) {
+            //event.preventDefault();
+            //event.stopPropagation();
+            if (window.xray) {
+               xray.send('adman-vk', {i: 'like_click'});
+            }
+          });
+        <!-- /IF -->
+
+    })(document.getElementById("trg-b-##TrgUnID##"), '##VK_image_src##')
+</script>
+
+<script>
+    (function() {
+      try {
+        var countryId = '##Reklama/CountryID##';
+        var provinceId = '##Reklama/ProvinceID##';
+        var regionId = '##Reklama/RegionID##';
+
+        var requestStartTime = '##RB/request_st##';
+
+        function selectDuration(duration) {
+          var durationType = 'fail';
+          if (duration < 100) {
+            durationType = 'instantly1';
+          } else if (duration < 300) {
+            durationType = 'instantly2';
+          } else if (duration < 500) {
+            durationType = 'instantly3';
+          } else if (duration < 1000) {
+            durationType = 'very-fast';
+          } else if (duration < 2000) {
+            durationType = 'fast';
+          } else if (duration < 4000) {
+            durationType = 'moderate';
+          } else if (duration < 8000) {
+            durationType = 'slightly-slow';
+          } else if (duration < 15000) {
+            durationType = 'slow';
+          } else if (duration < 30000) {
+            durationType = 'very-slow';
+          }
+          return durationType;
+        }
+
+        function sendXray(t, i, dwh) {
+          if (window.xray) {
+            try {
+              if (xray.sendImmediately) {
+                xray.sendImmediately(t, {i: i, dwh: dwh});
+              } else {
+                xray.send(t, {i: i, dwh: dwh});
+              }
+            } catch (e) {}
+          }
+        }
+
+        function sendLogXray(t, prefix, startTime) {
+          var loadTime = new Date().getTime() - startTime;
+          var durationType = selectDuration(loadTime);
+
+          var i = {};
+          i[prefix] = 1;
+          i[prefix + '_' + durationType] = 1;
+
+          sendXray(t, i, {country_id: countryId, province_id: provinceId, region_id: regionId, duration_type: durationType});
+        }
+
+        function createLogImg(src, prefix) {
+            var startTime = new Date().getTime();
+
+            var img = new Image();
+            img.onload = function () {
+              try {
+                sendLogXray('adman-img', prefix, startTime);
+
+      					if (requestStartTime) {
+      						sendLogXray('adman-req-time', 'hit', requestStartTime);
+      					}
+
+              } catch (e) {}
+            };
+
+            img.src = src + (src.indexOf('?') === -1 ? '?' : '&') + 'r=' + Math.random();
+        }
+
+        createLogImg('##SSP/Banner1_image_main_url##', 'vk');
+
+      } catch (e) {}
+    })();
+</script>
+
+</div>
+##SetVars(VK_show=)##

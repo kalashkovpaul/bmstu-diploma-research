@@ -1,0 +1,135 @@
+<mxfile host="65bd71144e">
+    <diagram id="VbWWTKGXFc2pgVcvpsFh" name="Page-1">
+        <mxGraphModel dx="1432" dy="750" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="768.96" y="210" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="608.96" y="210"/>
+                            <mxPoint x="608.96" y="331"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="Отрендерить изменения в память" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="278.96" y="160" width="260" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="49.999999999999964" y="178.11000000000013" as="sourcePoint"/>
+                        <mxPoint x="278.96" y="178.11000000000013" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="current дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="158.96" y="160" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;entryX=-0.003;entryY=0.683;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="49.999999999999964" y="228.11000000000013" as="sourcePoint"/>
+                        <mxPoint x="198.9599999999998" y="227.91000000000008" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="workInProgress дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="128.96" y="210" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="348.96" y="556" as="sourcePoint"/>
+                        <mxPoint x="348.96" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="requestIdleCallback" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="8">
+                    <mxGeometry x="-0.0515" y="-3" relative="1" as="geometry">
+                        <mxPoint x="47" y="90" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="458.96" y="556" as="sourcePoint"/>
+                        <mxPoint x="458.96" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="DOM API" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="10">
+                    <mxGeometry x="-0.0515" y="-3" relative="1" as="geometry">
+                        <mxPoint x="27" y="90" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="208.96" y="346" as="targetPoint"/>
+                        <mxPoint x="58.96" y="356" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="Закрепить изменения на экране" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="678.96" y="306" width="260" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="408.40000000000003" y="160" as="targetPoint"/>
+                        <mxPoint x="408.40000000000003" y="40" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="События об обновлении" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="14">
+                    <mxGeometry x="0.0139" y="-1" relative="1" as="geometry">
+                        <mxPoint x="72" y="9" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="Актуальное workInProgress дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="613.96" y="230" width="210" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50.96" y="178.11000000000013" as="sourcePoint"/>
+                        <mxPoint x="118.96000000000001" y="311.11" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="118.96000000000001" y="178.11"/>
+                            <mxPoint x="118.96000000000001" y="381"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="458.96" y="558.2222493489585" as="sourcePoint"/>
+                        <mxPoint x="468.96" y="270" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="458.96" y="456"/>
+                            <mxPoint x="808.96" y="456"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="DOM-дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="163.96" y="336" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="938.96" y="319.20000000000005" as="sourcePoint"/>
+                        <mxPoint x="1108.96" y="319" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="938.96" y="356.5" as="sourcePoint"/>
+                        <mxPoint x="1108.96" y="357" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="938.96" y="397" as="sourcePoint"/>
+                        <mxPoint x="1108.96" y="397" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="workInProgress дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="948.96" y="380" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Актуальное DOM-дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="938.96" y="340" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="current дерево" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="963.96" y="301" width="100" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
